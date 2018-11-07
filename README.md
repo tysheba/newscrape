@@ -12,6 +12,7 @@ The following packages are used in the program:
    4. cheerio
 
    5. axios
+   6. morgan
 
 
  https://tysheba.github.io/newscrape/
