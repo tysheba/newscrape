@@ -87,7 +87,7 @@ app.get("/scrape", function (req, res) {
 app.get('/', function (req, res) {
   db.Article.find({})
     .then(function (dbArticle) {
-      res.render('Index', {dbArticle});
+      res.render('index', {dbArticle});
     });
 });
 
