@@ -8,10 +8,10 @@ $(document).on("click", "#add-comment", function () {
   $("#post-comment").on("click", function () {
     // Empty the comments from the modal box
     var comments = $("#comment-text").val()
-    console.log(thisId)
+    var commentTitle = $("#comment-name").val()
+    console.log(commentTitle)
     console.log(comments)
-    $("#comment-name").val('');
-    $("#comment-text").val('');
+
     // AJAX POST call to the submit route on the server
     // This will take the data from the form and send it to the server
     $.ajax({
@@ -28,7 +28,11 @@ $(document).on("click", "#add-comment", function () {
       .then(function (data) {
         // Log the response
         console.log(data);
+        console.log(data.note.title)
+        console.log(data.body)
       });
+      $("#comment-name").val('');
+      $("#comment-text").val('');
   })
 });
 
