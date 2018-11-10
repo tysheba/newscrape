@@ -1,49 +1,50 @@
-//When the post comment button is clicked on an Article
-$("#add-comment").on("click", function() {
+
+//When the add comment button is clicked on an Article
+$(document).on("click", "#add-comment", function () {
   var thisId = $(this).attr("data-id");
   console.log(thisId)
- // Whenever someone clicks post on Modal box
-$("#post-comment").on("click", function() {
-  // Empty the comments from the modal box
-  var comments = $("#comment-text").val()
-  console.log(thisId)
-  console.log(comments)
- $("#comment-name").val('');
-  $("#comment-text").val('');
-// AJAX POST call to the submit route on the server
-// This will take the data from the form and send it to the server
-  $.ajax({
-    type: "POST",
-    dataType: "json",
-    url: "/articles/:id",
-    data: {
-      title: $("#comment-name").val(),
-      note: $("#comment-text").val(),
-    }
+  console.log("button clicked")
+  // Whenever someone clicks post on Modal box
+  $("#post-comment").on("click", function () {
+    // Empty the comments from the modal box
+    var comments = $("#comment-text").val()
+    console.log(thisId)
+    console.log(comments)
+    $("#comment-name").val('');
+    $("#comment-text").val('');
+    // AJAX POST call to the submit route on the server
+    // This will take the data from the form and send it to the server
+    $.ajax({
+      method: "POST",
+      url: "/articles/" + thisId,
+      data: {
+        // Value taken from title input
+        title: $("#comment-name").val(),
+        // Value taken from note textarea
+        body: $("#comment-text").val()
+      }
+    })
+      // With that done
+      .then(function (data) {
+        // Log the response
+        console.log(data);
+      });
   })
-
 });
-
-
 
    // Now make an ajax call for the Article
-  $.ajax({
-    method: "GET",
-    url: "/articles/" + thisId
-  })
+  // $.ajax({
+  //   method: "GET",
+  //   url: "/articles/" + thisId
+  // })
 
-  // If that API call succeeds, add the title and comment for the note to the page
-    .then(function(data) {
-      console.log(data);
-    // Add the title and body to the #note section
-      $("#notes").prepend("<p class='data-entry' data-id=" + data._id + "><span class='dataTitle' data-id=" +
-      data._id + ">" + data.title + "</span><span class=delete>X</span></p>");
-      // Clear the note and title inputs on the page
-      $("#note").val("");
-      $("#title").val("");
-    });
-});
+  // // If that API call succeeds, add the title and comment for the note to the page
+  //   .then(function(data) {
+  //     console.log(data);
+
+  //   });
 
 
 
-  
+
+

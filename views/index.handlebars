@@ -33,6 +33,7 @@
       {{#each dbArticle}}
       <div class="card" style="width: 50rem; margin: 20px;">
         <div class="card-body" data-id="{{this._id}}">
+          <h5>{{this._id}}</h5>
           <h5 class="card-title">{{this.title}}</h5>
           <p class="card-text">{{this.summary}}</p>
           <a href="#" class="card-link">{{this.link}}</a><br>
@@ -46,11 +47,11 @@
 <div class = col-sm-4>
   <div class="card text-white bg-primary mb-3" style="max-width: 18rem; margin: 20px;">
   <div class="card-header">Posted Comments by Article</div>
-  {{#each dbArticle}}
-    {{#if this.note}}
+  {{#each dbNote}}
+    {{#if this.body}}
   <div class="card-body" id = "notes">
     <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">{{this.note}}</p>
+    <p class="card-text">{{this.body}}</p>
   </div>
     {{/if}}
   {{/each}}
