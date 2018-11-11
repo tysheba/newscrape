@@ -28,26 +28,26 @@ $(document).on("click", "#add-comment", function () {
       .then(function (data) {
         // Log the response
         console.log(data);
-        console.log(data.note.title)
-        console.log(data.body)
       });
       $("#comment-name").val('');
       $("#comment-text").val('');
+      location.reload();
   })
 });
 
-   // Now make an ajax call for the Article
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/articles/" + thisId
-  // })
-
-  // // If that API call succeeds, add the title and comment for the note to the page
-  //   .then(function(data) {
-  //     console.log(data);
-
-  //   });
-
+  //Scrape for new articles
+  $("#scrape").on("click",function() {
+    console.log("button clicked")
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: "/scrape",
+      // On a successful call, clear the #results section
+      success: function(response) {
+        console.log("scrape complete")
+      }
+    });
+  })
 
 
 
