@@ -12,7 +12,7 @@ $(document).on("click", "#add-comment", function () {
     console.log(commentTitle)
     console.log(comments)
 
-    // AJAX POST call to the submit route on the server
+    // AJAX POST call to the route on the server to post comments
     // This will take the data from the form and send it to the server
     $.ajax({
       method: "POST",
@@ -42,7 +42,7 @@ $(document).on("click", "#add-comment", function () {
       type: "GET",
       dataType: "json",
       url: "/scrape",
-      // On a successful call, clear the #results section
+      // On a successful call send notification scrape complete.
       success: function(response) {
         console.log("scrape complete")
       }

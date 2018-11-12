@@ -42,7 +42,7 @@
         </div>
       </div>
       {{#if note}}
-      <div class="card text-white bg-primary mb-3" style="max-width: 80rem; margin: 20px;">
+      <div class="card text-white bg-primary mb-3" style="max-width: 50rem; margin: 20px;">
         <div class="card-header">Last Note about the Article</div>
         <div class="card-body" id="notes">
           <h5 class="card-title">Title: {{note.title}}</h5>
@@ -53,21 +53,6 @@
       {{/each}}
     </div>
 
-    {{!-- Section for Comments --}}
-    {{!-- <div class=col-sm-4>
-      <div class="card text-white bg-primary mb-3" style="max-width: 18rem; margin: 20px;">
-        <div class="card-header">Posted Comments by Article</div>
-        {{#each dbArticle}}
-        {{#if this.note}}
-        <div class="card-body" id="notes">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">{{this.body}}</p>
-        </div>
-        {{/if}}
-        {{/each}}
-      </div>
-
-    </div> --}}
 
     {{!-- Modal to post a comment --}}
 
