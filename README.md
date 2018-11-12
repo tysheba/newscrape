@@ -4,20 +4,12 @@ This is a web app that lets users view and leave comments on the latest news scr
 
 To run the application locally, first clone this repository with the following command.
 
-git clone 
+git clone https://github.com/tysheba/newscrape.git
 
 Next, install the application dependencies.
 
-npm install express body-parser express-handlebars mysql
-
-Finally, run the node server locally.
-
-node server.js
-
-Now, open the local application on port 8080 at the URL: http://localhost:3000/. 
-
 The following packages are used in the program:
-1. express
+   1. express
 
    2. express-handlebars
 
@@ -27,6 +19,14 @@ The following packages are used in the program:
 
    5. axios
    6. morgan
+   
+npm install express body-parser express-handlebars mysql mongoose cheerio axios morgan
+
+Finally, run the node server locally.
+
+node server.js
+
+Now, open the local application on port 8080 at the URL: http://localhost:3000/. 
 
 
  https://tysheba.github.io/newscrape/
