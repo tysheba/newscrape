@@ -33,4 +33,4 @@ Now, open the local application on port 8080 at the URL: http://localhost:3000/.
 
  https://damp-atoll-13705.herokuapp.com/ | https://git.heroku.com/damp-atoll-13705.git
 
- <img href="/public/Images/NewScrapeSS.png">
+ <img src="/public/Images/NewScrapeSS.png">
